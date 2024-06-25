@@ -8,8 +8,7 @@ def main():
 
     try:
         # Enviar dados para o servidor
-        # Por exemplo: "10 20 30 sum" (sem as aspas)
-        data = "10 20 30 sum"
+        data = str(input("Insira a operação: "))
         print(f"Enviando: {data}")
         client_socket.sendall(data.encode())
 
