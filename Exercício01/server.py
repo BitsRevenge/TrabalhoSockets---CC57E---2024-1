@@ -2,7 +2,6 @@ import socket
 import random
 import threading
 
-# Lista de frases (base de dados de frases)
 fortunes = [
     "A vida trará coisas boas se tiveres paciência.",
     "Demonstre amor e alegria em todas as oportunidades e verás que a paz nasce dentro de você.",
@@ -11,7 +10,6 @@ fortunes = [
     "A maior de todas as torres começa no solo.",
 ]
 
-# Função para tratar as conexões dos clientes
 def handle_client(conn, addr):
     print(f"Nova conexão: {addr}")
     with conn:
@@ -47,9 +45,8 @@ def handle_client(conn, addr):
             conn.sendall(response.encode())
     print(f"Conexão encerrada: {addr}")
 
-# Configuração do servidor
-HOST = '127.0.0.1'  # Endereço IP do servidor
-PORT = 65432        # Porta que o servidor escuta
+HOST = '127.0.0.1'  
+PORT = 65432        
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.bind((HOST, PORT))
